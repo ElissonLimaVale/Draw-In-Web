@@ -64,19 +64,13 @@ function inserir() {
 }
 
 function resizing () {
-
-		window.addEventListener("mousedown", () => { 
-			multcolor = true;
-		});
-		window.addEventListener("mouseup", () => { 
-			multcolor = false;
-		}, false);
-		window.addEventListener("touchstart", () => { 
-			multcolor = true;
-		},false);
-		window.addEventListener("touchend", () => { 
-			multcolor = false;
-		}, false);
+	
+	document.getElementById("corpo").addEventListener("mousedown", () => { 
+		multcolor = true;
+	});
+	document.getElementById("corpo").addEventListener("mouseup", () => { 
+		multcolor = false;
+	}, false);
 
 	let background = null;
 	size = ((window.innerWidth * 100) / 90) / countWidth;
