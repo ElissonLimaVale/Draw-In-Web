@@ -8,6 +8,7 @@ var countHeight =  window.innerHeight / size ;
 var multcolor = false;
 var download = document.getElementById("download");
 var img = new Image();
+var touch = window.innerWidth > 700 ? "mousedown": "touchmove";
 
 document.getElementById("save-buttons").hidden = true;
 
@@ -64,13 +65,14 @@ function inserir() {
 }
 
 function resizing () {
-	
-	document.getElementById("corpo").addEventListener("mousedown", () => { 
-		multcolor = true;
-	});
-	document.getElementById("corpo").addEventListener("mouseup", () => { 
-		multcolor = false;
-	}, false);
+	if(window.innerWidth > 700){
+		document.getElementById("corpo").addEventListener(touch, () => { 
+			multcolor = true;
+		});
+		document.getElementById("corpo").addEventListener("mouseup", () => { 
+			multcolor = false;
+		}, false);
+	}
 
 	let background = null;
 	size = ((window.innerWidth * 100) / 90) / countWidth;
@@ -84,8 +86,9 @@ function resizing () {
 function init(){
 	inserir();
 	document.querySelectorAll('.div').forEach((element) => {
-		element.addEventListener("mousedown", (event) => {
+		element.addEventListener(touch, (event) => {
 			event.preventDefault ? event.preventDefault() : event.returnValue = false;
+			//alert();
 			colorir(event.path[0], true);
 		});
 		element.addEventListener("mouseover", (event) => {
@@ -122,6 +125,7 @@ function salvar() {
 		//document.getElementById("image").appendChild(img);
 
 		download.href = img.src.replace("image/png", "image/octet-stream");
+		download.setAttribute("target","blank");
 		download.download = "DrawnImage.png";
 	});
 	document.getElementById("image").style = "top: 2vh";

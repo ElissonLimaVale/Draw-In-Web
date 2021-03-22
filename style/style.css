@@ -12,6 +12,7 @@
 }
 body {
 	background-color: black;
+	overflow: hidden;
 }
 #corpo {
 	background-color: rgb(0, 0, 0);
