@@ -44,7 +44,7 @@ document.getElementById("dell").addEventListener("click", (e) => {
 
 document.getElementById("delleteall").addEventListener("click", (e) => {
 	document.querySelectorAll(".div").forEach((element) => {
-		element.style = "background-color: #fff;width: "+ size +"px; height: "+ size +"px;"; 
+		element.style = "border: none;margin: 0px;background-color: #fff;width: "+ size +"px; height: "+ size +"px;"; 
 	});
 });
 document.getElementById("more").addEventListener("click", () => {
@@ -70,7 +70,7 @@ function inserir() {
 function resizing () {
 	size = ((window.innerWidth * 100) / 90) / countWidth;
 	document.querySelectorAll('.div').forEach((element) => {
-		element.style = "width: "+ size +"px; height: "+ size +"px;";
+		element.style = "border: none;margin: 0px;width: "+ size +"px; height: "+ size +"px;";
 	});
 }
 
@@ -91,7 +91,7 @@ function init(){
 
 function colorir(element, multitens){
 	if(multitens){
-		element.style = "background-color: "+ color +";width: "+ size +"px; height: "+ size +"px;"; 
+		element.style = "border: none;margin: 0px;background-color: "+ color +";width: "+ size +"px; height: "+ size +"px;"; 
 	}
 }
 
@@ -112,22 +112,18 @@ function salvar() {
 		};
 		canvas.style = "width: 100%; height: 100%;";
 		img.src = canvas.toDataURL("image/png");
-		document.getElementById("image").appendChild(img);
+		//document.getElementById("image").appendChild(img);
 
-		download.href = img.src.replace("image/jpeg", "image/octet-stream");
-		download.download = "drownImage.jpg";
+		download.href = img.src.replace("image/png", "image/octet-stream");
+		download.download = "DrawnImage.png";
 	});
 	document.getElementById("image").style = "top: 2vh";
 }
-
-init();
 
 
 //cancelar download
 document.getElementById("cancelar").addEventListener("click", () => {
 	document.getElementById("image").style = "top: -1200px";
-	img.src = "";
-	download.href = "index.html";
 });
 //salvar 
 document.getElementById("salvar").addEventListener("click", () => {
@@ -136,3 +132,5 @@ document.getElementById("salvar").addEventListener("click", () => {
 	img.src = "";
 	download.href = "index.html";
 });
+
+init();

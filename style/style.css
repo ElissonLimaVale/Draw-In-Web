@@ -6,31 +6,31 @@
 
 .div {
 	float: left;
-	margin: 0px;
-	padding: 0px;
+	/* margin: 0px;
+	padding: 0px; */
 	border: none;
 	background-color: #fff;
 }
 body {
 	background-color: black;
-	cursor: crosshair;
 }
 #corpo {
 	background-color: rgb(206, 206, 206);
 	width: 90%;
 	height: 100vh;
 	overflow: hidden;
-	padding: 0px;
+	cursor: crosshair;
+	display: block;
 }
 #image {
-	width: 75%;
+	width: 80%;
 	height: 600px;
 	border: 1px solid rgba(0,0,0,.3);
 	border-radius: 8px;
 	position: absolute;
 	top: -1000px;
-	left: calc(25% / 2);
-	right: calc(25% /2);
+	left: calc(20% / 2);
+	right: calc(20% /2);
 	transition: .3s;
 	overflow: auto;
 	cursor: pointer;
