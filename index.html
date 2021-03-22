@@ -8,11 +8,6 @@
 	<div id="corpo">
 	</div>
 
-	<div id="image">
-		<button id="cancelar" class="image-buttons cancel">fechar &#10006;</button>
-		<a id="download"><button id="salvar" class="image-buttons success">Salvar &#10004;</button></a>
-	</div>
-
 	<div id="menu">
 		<input id="select-color" type="color">
 		<select  id="select-linha" name="linha" value="Selecionar">
@@ -25,6 +20,7 @@
 			<option value="100">100 &#9635;</option>
 			<option value="120">120 &#9635;</option>
 			<option value="150">150 &#9635;</option>
+			<option value="200">200 &#9635;</option>
 		</select>
 		<div id="add" class="icon full all">&#9998;</div>
 		<div id="dell" class="icon full all">&#10000;</div>
@@ -33,7 +29,14 @@
 		<div id="quad" class="icon ">&#9638;</div>
 		<div id="save" class="icon ">&#10063;</div>
 	</div>
-	<script src="scripts/html2canvas.min.js"></script>
+	<div id="image">
+	</div>
+	<div id="save-buttons">
+		<button id="cancelar" class="image-buttons cancel">fechar &#10006;</button>
+		<a id="download"><button id="salvar" class="image-buttons success">Salvar &#10004;</button></a>
+	</div>
+
+	<script src="scripts/html2canvas.js"></script>
 	<script src="scripts/script.js"></script>
 </body>
 </html>

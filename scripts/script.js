@@ -9,15 +9,11 @@ var multcolor = false;
 var download = document.getElementById("download");
 var img = new Image();
 
+document.getElementById("save-buttons").hidden = true;
+
 // methodods
 window.addEventListener("resize", resizing);
 
-window.addEventListener("mousedown", () => { 
-	multcolor = true;
-});
-window.addEventListener("mouseup", () => { 
-	multcolor = false;
-});
 document.getElementById("select-color").addEventListener("change", () => {
 	color = document.getElementById("select-color").value;
 });
@@ -68,10 +64,27 @@ function inserir() {
 }
 
 function resizing () {
+
+		window.addEventListener("mousedown", () => { 
+			multcolor = true;
+		});
+		window.addEventListener("mouseup", () => { 
+			multcolor = false;
+		}, false);
+		window.addEventListener("touchstart", () => { 
+			multcolor = true;
+		},false);
+		window.addEventListener("touchend", () => { 
+			multcolor = false;
+		}, false);
+
+	let background = null;
 	size = ((window.innerWidth * 100) / 90) / countWidth;
 	document.querySelectorAll('.div').forEach((element) => {
-		element.style = "border: none;margin: 0px;width: "+ size +"px; height: "+ size +"px;";
+		background = !!!element.style.backgroundColor ? "rgb(255, 255, 255)": element.style.backgroundColor;
+		element.style = "background-color: "+ background +";border: none;margin: 0px;width: "+ size +"px; height: "+ size +"px;";
 	});
+	
 }
 
 function init(){
@@ -118,12 +131,14 @@ function salvar() {
 		download.download = "DrawnImage.png";
 	});
 	document.getElementById("image").style = "top: 2vh";
+	document.getElementById("save-buttons").hidden = false;
 }
 
 
 //cancelar download
 document.getElementById("cancelar").addEventListener("click", () => {
 	document.getElementById("image").style = "top: -1200px";
+	document.getElementById("save-buttons").hidden = true;
 });
 //salvar 
 document.getElementById("salvar").addEventListener("click", () => {
@@ -131,6 +146,7 @@ document.getElementById("salvar").addEventListener("click", () => {
 	document.getElementById("image").style = "top: -1200px";
 	img.src = "";
 	download.href = "index.html";
+	document.getElementById("save-buttons").hidden = true;
 });
 
 init();
