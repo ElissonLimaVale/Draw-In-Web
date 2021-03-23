@@ -9,8 +9,9 @@
 	</div>
 
 	<div id="menu">
-		<input id="select-color" type="color">
-		<select  id="select-linha" name="linha" value="Selecionar">
+		<div id="hidden-menu" class="icon-hidden">&hArr;</div>
+		<input id="select-color" class="item-menu" type="color">
+		<select  id="select-linha" class="item-menu" name="linha" value="Selecionar">
 			<option value="24">24 &#9635;</option>
 			<option value="34">34 &#9635;</option>
 			<option value="48">48 &#9635;</option>
@@ -21,20 +22,24 @@
 			<option value="120">120 &#9635;</option>
 			<option value="150">150 &#9635;</option>
 			<option value="200">200 &#9635;</option>
-			<option value="250">250 &#9635;</option>
+			<!-- <option value="250">250 &#9635;</option> -->
 		</select>
-		<div id="add" class="icon full all">&#9998;</div>
-		<div id="dell" class="icon full all">&#10000;</div>
-		<div id="delleteall" class="icon">&#9986;</div>
-		<div id="more" class="icon ">&#10010;</div>
-		<div id="quad" class="icon ">&#9638;</div>
-		<div id="save" class="icon ">&#10063;</div>
+		<div id="add" class="icon all item-menu">&#9998;</div>
+		<div id="dell" class="icon all item-menu">&#10000;</div>
+		<div id="delleteall" class="icon item-menu">&#9986;</div>
+		<div id="more" class="icon item-menu">&#10010;</div>
+		<div id="quad" class="icon item-menu">&#9638;</div>
+		<div id="save" class="icon item-menu">&#10063;</div>
 	</div>
 	<div id="image">
 	</div>
 	<div id="save-buttons">
 		<button id="cancelar" class="image-buttons cancel">fechar &#10006;</button>
 		<a id="download"><button id="salvar" class="image-buttons success">Salvar &#10004;</button></a>
+	</div>
+
+	<div id="load-area" hidden>
+		<div id="spinner"></div>
 	</div>
 
 	<script src="scripts/html2canvas.js"></script>

@@ -2,12 +2,12 @@
 	font-family: arial;
 	margin: 0px;
 	padding: 0px;
+	border: none;
+	transition: 0s;
 }
 
-.div {
+.element {
 	float: left;
-	/* margin: 0px;
-	padding: 0px; */
 	border: none;
 }
 body {
@@ -15,9 +15,7 @@ body {
 	overflow: hidden;
 }
 #corpo {
-	background-color: rgb(0, 0, 0);
-	width: 90%;
-	height: 100vh;
+	background-color: rgb(158, 158, 158);
 	overflow: hidden;
 	cursor: crosshair;
 	display: block;
@@ -40,23 +38,24 @@ body {
 @media screen and (min-width: 800px){
 	#menu {
 		position: fixed;
-		top: 20px;
-		right: 20px;
-		width: 80px;
+		top: 5px;
+		right: 5px;
+		width: 60px;
 		height: auto;
 		background-color: rgb(68, 216, 167);
 		padding: 10px;
 		border-radius: 5px;
+		cursor: move;
 	}
 	#select-color {
 		width: 100%;
-		height: 50px;
+		height: 40px;
 		border: 4px solid black;
 		border-radius: 5px;
 	}
 	#select-linha {
 		width: 100%;
-		padding: 5px 12px;
+		padding: 5px 10px;
 		color: rgba(0,0,0,.4);
 		font-size: 16px;
 		margin-top: 10px;
@@ -65,17 +64,29 @@ body {
 	
 	.icon {
 		width: 80%;
-		height: 50px;
+		padding: 5px 0px;
 		border: none;
 		background-color: rgb(252, 252, 252);
 		margin: 10px 10%;
-		font-size: 34px;
+		font-size: 24px;
 		text-align: center;
 		border-radius: 5px;
 		cursor: pointer;
+		transition: .2s;
 	}
-	
 	.icon:hover {
+		background-color: rgb(201, 201, 201);
+	}
+	.icon-hidden {
+		width: 80%;
+		border: none;
+		background-color: rgb(252, 252, 252);
+		margin: 0px 10% 10px 10%;
+		font-size: 24px;
+		text-align: center;
+		border-radius: 5px;
+		cursor: pointer;
+	}.icon-hidden:hover {
 		background-color: rgb(201, 201, 201);
 	}
 }
@@ -90,10 +101,11 @@ body {
 		background-color: rgb(68, 216, 167);
 		padding: 5px;
 		border-radius: 3px;
+		cursor: move;
 	}
 	#select-color {
 		width: 100%;
-		height: 40px;
+		height: 30px;
 		border: 2px solid black;
 		border-radius: 3px;
 	}
@@ -108,11 +120,11 @@ body {
 	
 	.icon {
 		width: 90%;
-		height: 40px;
+		padding: 2px 0px;
 		border: none;
 		background-color: rgb(252, 252, 252);
 		margin: 10px 5%;
-		font-size: 24px;
+		font-size: 20px;
 		text-align: center;
 		border-radius: 3px;
 		cursor: pointer;
@@ -121,8 +133,20 @@ body {
 	.icon:hover {
 		background-color: rgb(201, 201, 201);
 	}
-}
 
+	.icon-hidden {
+		width: 80%;
+		border: none;
+		background-color: rgb(252, 252, 252);
+		margin: 0px 10% 10px 10%;
+		font-size: 18px;
+		text-align: center;
+		border-radius: 5px;
+		cursor: pointer;
+	}.icon-hidden:hover {
+		background-color: rgb(201, 201, 201);
+	}
+}
 
 .image-buttons {
 	padding: 10px 24px;
@@ -144,4 +168,29 @@ body {
 	position: fixed;
 	bottom: 20px;
 	left: 20px;
+}
+
+#load-area {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 100vh;
+	background-color:rgb(76, 223, 150);
+}
+
+#spinner {
+	width: 50px;
+	height: 50px;
+	border: 5px solid rgb(0, 0, 0);
+	border-radius: 50%;
+	margin: auto;
+	margin-top: calc(50vh - 50px);
+	border-top-color: rgba(76, 223, 150,0);;
+	transition: .5s;
+	animation: rotate .5s linear infinite;
+}
+
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
 }
